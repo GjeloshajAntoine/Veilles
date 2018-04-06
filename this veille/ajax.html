@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button id="download" type="button" name="button">Télécharger</button>
+    <script type="text/javascript">
+    var button=document.getElementById('download');
+
+    button.addEventListener("click",function () {
+      var xhr = new XMLHttpRequest();
+      this.innerHTML="Clické , merci !!";
+      var that =this;
+      xhr.addEventListener("load",function () {
+        that.innerHTML="Téléchargé";
+        console.log("Téléchargé");
+      });
+      xhr.open("get","ajax.json",true);
+      xhr.send();
+    });
+    </script>
+  </body>
+</html>

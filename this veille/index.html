@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      var glob="global";
+      var test=function () {
+        console.log(glob);
+      }
+      var testThis=function () {
+        console.log(glob);
+        console.log(this.glob);
+        console.log(window.glob);
+        window.nouvelleVariable="COUCOU";
+        console.log(this==window);
+      }
+      testThis.call({glob:'callee'})
+      var testbinded=function () {
+        console.log(glob);
+        console.log(this);
+      }.bind({glob:'truc'})
+
+
+    </script>
+  </body>
+</html>
